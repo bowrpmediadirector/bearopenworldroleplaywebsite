@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Bear Open World Roleplay</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero slim" id="top">
+      <nav class="nav">
+        <h1>Bear Open World Roleplay</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="departments.html">Departments</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="guidelines.html">Guidelines</a></li>
+        </ul>
+      </nav>
+      <section class="hero-content">
+        <p class="tag">Restricted Access</p>
+        <h2>Admin Panel</h2>
+        <p>Login is required to manage announcements, staff, and events.</p>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="login-section">
+        <h3>Admin Login</h3>
+        <form id="login-form" class="admin-form">
+          <label>Username <input type="text" id="username" required /></label>
+          <label>Password <input type="password" id="password" required /></label>
+          <button type="submit" class="btn">Login</button>
+          <p id="login-feedback" class="hint"></p>
+        </form>
+      </section>
+
+      <section class="section alt hidden" id="panel-section">
+        <div class="panel-head">
+          <h3>Content Management</h3>
+          <button id="logout-btn" class="btn">Logout</button>
+        </div>
+
+        <div class="grid cards">
+          <article class="card">
+            <h4>Add Announcement</h4>
+            <form id="announcement-form" class="admin-form compact">
+              <label>Title <input type="text" id="announcement-title" required /></label>
+              <label>Message <textarea id="announcement-body" rows="3" required></textarea></label>
+              <button type="submit" class="btn">Add Announcement</button>
+            </form>
+          </article>
+
+          <article class="card">
+            <h4>Add Staff Member</h4>
+            <form id="staff-form" class="admin-form compact">
+              <label>Name <input type="text" id="staff-name" required /></label>
+              <label>Role <input type="text" id="staff-role" required /></label>
+              <button type="submit" class="btn">Add Staff</button>
+            </form>
+          </article>
+
+          <article class="card">
+            <h4>Add Event</h4>
+            <form id="event-form" class="admin-form compact">
+              <label>Event name <input type="text" id="event-name" required /></label>
+              <label>Event date <input type="date" id="event-date" required /></label>
+              <button type="submit" class="btn">Add Event</button>
+            </form>
+          </article>
+        </div>
+
+        <div class="section-pad">
+          <h4>Manage Existing Data</h4>
+          <div class="grid cards">
+            <article class="card"><h4>Announcements</h4><div id="announcement-preview" class="stack"></div></article>
+            <article class="card"><h4>Staff</h4><div id="staff-preview" class="stack"></div></article>
+            <article class="card"><h4>Events</h4><div id="event-preview" class="stack"></div></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Bear Open World Roleplay. All rights reserved.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
