@@ -1,15 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/departments", "destination": "/departments.html" },
-    { "source": "/staff", "destination": "/staff.html" },
-    { "source": "/announcements", "destination": "/announcements.html" },
-    { "source": "/events", "destination": "/events.html" },
-    { "source": "/calendar", "destination": "/calendar.html" },
-    { "source": "/guidelines", "destination": "/guidelines.html" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "^/$", "dest": "/index.html" },
+    { "src": "^/admin$", "dest": "/admin.html" },
+    { "src": "^/departments$", "dest": "/departments.html" },
+    { "src": "^/staff$", "dest": "/staff.html" },
+    { "src": "^/announcements$", "dest": "/announcements.html" },
+    { "src": "^/events$", "dest": "/events.html" },
+    { "src": "^/calendar$", "dest": "/calendar.html" },
+    { "src": "^/guidelines$", "dest": "/guidelines.html" },
+    { "src": "^/(.*)$", "dest": "/index.html" }
   ]
 }
